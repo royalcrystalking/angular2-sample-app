@@ -1,0 +1,18 @@
+<h1>Users</h1>
+
+<div *ngIf="loading">Loading users data</div>
+
+<div *ngIf="!loading">
+  <button type="button"
+    loading-btn
+    [loadingText]="'Loading more...'"
+    [loadingMore]="userService.loading"
+    (sampleCustomEvent)="eventHandler($event)"
+    (click)="userService.getMoreUsers()">Load More Users</button>
+
+  <a [routerLink]="['./User-create']">Create user</a>
+
+  <users-list [users]="userService.usersCache"></users-list>
+
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,62 @@
+users,
+users-list,
+users-home,
+user-details { display: block; }
+
+ul.users-list {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 280px;
+  float: left;
+}
+.users-list > li {
+  list-style: none;
+  position: relative;
+  font-size: 14px;
+}
+.users-list > li.active {
+  background-color: #cecece;
+}
+.users-list > li > a {
+  display: block;
+  text-decoration: none;
+  padding: 3px 0;
+  color: dimgray;
+}
+.users-list > li > a.router-link-active {
+  background-color:#28b0ed;
+  color:#fff;
+}
+.users-list > li:hover {
+  background-color: slategray;
+  color: floralwhite;
+}
+.users-list > li:hover > a {
+  color: floralwhite;
+}
+
+.users-list > li > a > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 0 5px 0 5px;
+  vertical-align: middle;
+}
+.users-list > li > .actions {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+.users-list > li > .actions > a {
+  color: floralwhite;
+}
+.users-list > li:hover > .actions {
+  display: block;
+}
+
+.user-details {
+  margin-left: 280px;
+  padding: 0 15px;
+}

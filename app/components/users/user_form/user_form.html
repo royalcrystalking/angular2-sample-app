@@ -1,0 +1,27 @@
+<h1>User Form</h1>
+
+<!-- Wait for user when defered -->
+<div *ngIf="user">
+  <form novalidate (submit)="onSave(f.value)" #f="ngForm">
+    <div ngControlGroup="name">
+      <p>
+        <label>Firstname</label>
+        <input type="text"
+               ngControl="first"
+               [ngModel]="user.name.first"
+               required>
+      </p>
+      <p>
+        <label>Lastname</label>
+        <input type="text"
+               ngControl="last"
+               [ngModel]="user.name.last"
+               required>
+      </p>
+    </div>
+    <p>
+      <button type="submit"
+              [disabled]="!f.form.valid || f.form.pristine">Save</button>
+    </p>
+  </form>
+</div>

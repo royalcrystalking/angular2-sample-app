@@ -1,0 +1,19 @@
+<div class="user-details">
+  <div *ngIf="!user">No user found</div>
+
+  <div *ngIf="user">
+    <h1>User Details</h1>
+    <p>
+      Firstname: {{ user.name.first }}
+    </p>
+    <p>
+      Lastname: {{ user.name.last }}
+    </p>
+    <p>
+      <img [src]="user.picture.medium" alt="" />
+    </p>
+    <p>
+      <a [routerLink]="['../User-edit', { username: user.username }]">Edit</a>
+    </p>
+  </div>
+</div>
